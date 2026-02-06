@@ -1,11 +1,106 @@
-# Secrets
+############################
+# Python
+############################
+__pycache__/
+*.py[cod]
+.Python
+*.egg-info/
+.eggs/
+build/
+dist/
+*.egg
+pip-wheel-metadata/
+share/python-wheels/
+
+# Virtual environments (local only)
+.venv/
+venv/
+env/
+
+############################
+# Jupyter / Colab
+############################
+.ipynb_checkpoints/
+*-checkpoint.ipynb
+
+############################
+# GCP / Cloud / ML
+############################
+
+# Credentials & auth (NEVER COMMIT)
 *.json
 *.key
+*.pem
+*.p12
 .env
+.env.*
+.credentials/
+.gcloud/
+.abstra/
 
-# Colab / Jupyter
-.ipynb_checkpoints/
+# Vertex AI / ML artifacts
+models/
+model_artifacts/
+checkpoints/
+*.pkl
+*.joblib
+*.h5
+*.onnx
+*.tflite
 
-# Python
-__pycache__/
-*.pyc
+# Logs & crashes
+*.log
+crash.log
+
+############################
+# Terraform (only if used)
+############################
+*.tfstate
+*.tfstate.*
+.terraform/
+
+############################
+# Data (local / generated)
+############################
+data/raw/
+data/processed/
+data/tmp/
+
+############################
+# OS / Editor
+############################
+.DS_Store
+Thumbs.db
+*~
+.idea/
+.vscode/
+
+###########################
+# macOS
+##########################
+# General
+.DS_Store
+__MACOSX/
+.AppleDouble
+.LSOverride
+Icon[
+]
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
