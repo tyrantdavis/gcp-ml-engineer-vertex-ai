@@ -41,6 +41,28 @@ Validates SDK initialization, model serialization, and endpoint configuration pa
 
 ---
 
+## Immediate Next Step (Recommended)
+
+### Recommended Action
+- Begin preparations for integrating a real trained model into Vertex AI deployment.
+- Replace `dummy_model` in `05_deploy_vertex.ipynb` with the trained model artifacts once available.
+- Verify local saving and serialization using `.keras` format before attempting endpoint deployment.
+
+### Purpose
+- This step advances Course 10 learning objectives without consuming quota.
+- Ensures your environment and notebook workflow are ready for live deployment when quota is granted.
+
+### Artifact Updates
+- `notebooks/05_deploy_vertex.ipynb`: ready to swap dummy model for actual trained model.
+- Local artifacts directory: ready to store serialized `.keras` models.
+- Deployment workflow documented, dry-run endpoint placeholder verified.
+
+### Notes
+- No actual Vertex AI endpoint creation is performed at this stage to avoid quota consumption.
+- All subsequent live deployment steps remain deferred and are captured in the “Deferred / Non-Blocking Notes” section.
+
+---
+
 ## Deferred / Non-Blocking Notes
 
 The following steps are intentionally deferred and **not required** for Course 10 completion:
