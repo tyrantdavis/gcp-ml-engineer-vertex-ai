@@ -28,6 +28,32 @@ This document records the progress and artifacts associated with **Module 10 —
 
 ---
 
+## Deployment Artifact Reference
+
+This course includes a quota-safe deployment walkthrough using a placeholder model.
+
+**Notebook:**  
+`05_deploy_vertex.ipynb`
+
+**Purpose:**  
+Demonstrates Vertex AI deployment mechanics without consuming managed training or serving quota.  
+Validates SDK initialization, model serialization, and endpoint configuration patterns.
+
+---
+
+## Deferred / Non-Blocking Notes
+
+The following steps are intentionally deferred and **not required** for Course 10 completion:
+
+- Replace `dummy_model` with a trained production model
+- Deploy model to a live Vertex AI endpoint once quota permits
+- Issue real prediction requests against the endpoint
+- Capture serving logs and outputs for operational review
+
+This artifact is considered complete for learning and exam preparation purposes.
+
+---
+
 ## Blocking / Deferred Items
 
 ### Quota / Service Dependencies
