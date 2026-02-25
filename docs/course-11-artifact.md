@@ -1,76 +1,140 @@
 # Course 11 — Artifact Documentation
 
 ## Overview
-**What:**  
-- Tracks all outputs, experiments, and artifacts produced during Course 11 of the GCP ML Engineer path.  
-- Serves as the canonical reference for notebooks, models, and workflows.
 
-**Why:**  
-- Maintains continuity across the learning path.  
-- Provides a structured record for exam-relevant activities and future reference.
+### What
+- Tracks all outputs, experiments, and artifacts produced during Course 11
+  of the GCP ML Engineer learning path.
+- Serves as the canonical reference for notebooks, design artifacts, and
+  production ML system workflows.
+
+### Why
+- Maintains continuity across the learning path.
+- Provides a structured, exam-relevant record for future reference and review.
 
 ---
 
 ## Sections Executed
-**What:**  
-- Lists each module or notebook executed for Course 11.  
-- Provides brief description of purpose and learning objective.
 
-**Why:**  
-- Ensures all steps are traceable.  
-- Supports exam preparation and review.
+### What
+- Lists each notebook or module associated with Course 11.
+- Provides a brief description of purpose and learning objective.
 
-| Notebook | Purpose | Status |
-|----------|---------|--------|
-| 06_course11_<topic>.ipynb | <Short description> | Pending / Complete |
-| 07_course11_<topic>.ipynb | <Short description> | Pending / Complete |
+### Why
+- Ensures all learning steps are traceable.
+- Supports exam preparation and post-course review.
+
+| Notebook                               | Purpose                                              | Status              |
+|----------------------------------------|------------------------------------------------------|---------------------|
+| 06_course_production_ml_systems.ipynb  | Production ML system design & orchestration (concept)| Complete            |
+| 07_course11_.ipynb                     | Reserved / optional                                  | Not required        |
 
 ---
 
 ## Experiments & Models
-**What:**  
-- Documents datasets, preprocessing, models trained, and evaluation metrics.  
-- Includes local paths and, if applicable, GCS URIs for model storage.
 
-**Why:**  
-- Ensures reproducibility.  
-- Validates learning objectives with tangible artifacts.
+### What
+- Documents datasets, preprocessing, and models referenced during Course 11.
+- Includes local paths and (if applicable) GCS URIs.
 
-| Model / Artifact | Description | Local / GCS Path | Status |
-|-----------------|-------------|-----------------|--------|
-| dummy_model | Placeholder for deployment tests | artifacts/course11/dummy_model.keras | Pending |
-| <real_model> | <Description> | artifacts/course11/<model>.keras | Pending |
+### Why
+- Ensures reproducibility and traceability.
+- Validates learning objectives without requiring live execution.
+
+| Model / Artifact | Description                                | Local / GCS Path                          | Status   |
+|------------------|--------------------------------------------|-------------------------------------------|----------|
+| dummy_model      | Conceptual placeholder (design-only)       | artifacts/course11/dummy_model.keras      | Complete |
+| <real_model>     | Intentionally deferred                     | artifacts/course11/<model>.keras          | Deferred |
 
 ---
 
 ## Deployment / Optional
-**What:**  
-- Tracks optional deployment steps, e.g., Vertex AI endpoints or pipelines.  
-- Includes dry-run or quota-deferred notes.
 
-**Why:**  
-- Demonstrates deployment workflow without impacting quotas or resources.  
-- Provides reference for future live deployments.
+### What
+- Tracks optional deployment-related steps (design-level only).
+- Includes dry-run or quota-deferred deployment notes.
 
-| Deployment | Notes | Status |
-|-----------|-------|--------|
-| Vertex AI Endpoint (optional) | Deferred due to quota / dry-run only | Pending |
+### Why
+- Demonstrates understanding of deployment workflows.
+- Avoids unnecessary quota or cost consumption.
+
+| Deployment               | Notes                                      | Status   |
+|--------------------------|--------------------------------------------|----------|
+| Vertex AI Endpoint       | Design-only; quota-deferred                | Deferred |
 
 ---
 
 ## Deferred / Non-Blocking Notes
-**What:**  
-- Captures steps intentionally deferred for quota, scheduling, or optionality.  
 
-**Why:**  
-- Keeps the learning record complete without blocking progress.  
+### What
+- Captures steps intentionally deferred due to quota, scope, or cost discipline.
 
-- Replace dummy models with real models once trained.  
-- Deploy to Vertex AI endpoint when quota allows.  
-- Record logs, metrics, and outputs.
+### Why
+- Keeps the learning record complete without blocking progress.
+
+- Replace dummy models with trained models when available.
+- Deploy to Vertex AI endpoints once quota permits.
+- Record live logs, metrics, and outputs if executed in the future.
 
 ---
 
-## References
-- [GCP Skills Path — Course 11](https://www.skills.google/paths/17)
-- [GitHub Repo](https://github.com/tyrantdavis/gcp-ml-engineer-vertex-ai)
+## Scope & Intent (Explicit)
+
+### What this course covers
+- Production ML system design and reasoning.
+- Separation of concerns across:
+  - Training logic
+  - Pipeline orchestration
+  - Deployment configuration
+  - Monitoring and governance
+- End-to-end lifecycle thinking from data ingestion to monitoring.
+
+### What this course intentionally does not do
+- Execute live training jobs.
+- Deploy live Vertex AI endpoints.
+- Consume managed training or serving quota.
+
+This course is design-first by intent.
+
+---
+
+## Artifact References
+
+- notebooks/06_course_production_ml_systems.ipynb  
+  Conceptual production ML system walkthrough (non-executing)
+
+- training/trainer/task.py  
+  Trainer responsibility boundary
+
+- mlops/pipelines/training_pipeline.py  
+  Pipeline orchestration logic
+
+- deployment/endpoint_config.yaml  
+  Deployment configuration abstraction
+
+- docs/architecture.md  
+  System-level architecture reference
+
+---
+
+## Exam Framing
+
+This course maps directly to exam expectations around:
+- System boundaries and ownership
+- Failure modes and recovery paths
+- Reproducibility and auditability
+- Cost-aware ML system design
+- Monitoring and drift awareness
+
+---
+
+## Course 11 Close-Out Summary
+
+### What
+- Establishes a complete, design-level production ML system skeleton.
+- Documents system reasoning without requiring live execution.
+
+### Why
+- Aligns with exam expectations.
+- Preserves cost discipline.
+- Enables future extension without rework.
