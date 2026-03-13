@@ -2,3 +2,8 @@
 
 tensorflow>=2.12
 numpy
+google-cloud-aiplatform==1.140.0
+pandas
+scikit-learn
+matplotlib
+tensorflow
