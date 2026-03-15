@@ -17,3 +17,24 @@ This:
 - Shows feedback loop
 - Looks professional
 - Signals architectural maturity
+
+
+```mermaid
+flowchart TD
+
+A[Raw Dataset] --> B[Data Exploration]
+B --> C[Feature Engineering]
+
+C --> D[Model Training<br>Keras]
+D --> E[Managed Training<br>Vertex AI]
+
+E --> F[Model Deployment<br>Vertex AI Endpoint]
+
+C --> G[Feature Store<br>Vertex AI]
+G --> H[Streaming Feature Ingestion]
+H --> I[Online Feature Retrieval]
+
+I --> F
+
+F --> J[Production Inference]
+```
