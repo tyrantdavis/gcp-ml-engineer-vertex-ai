@@ -1,3 +1,5 @@
+# Training entrypoint inside container
+import logging
 import os
 
 import numpy as np
@@ -5,9 +7,18 @@ import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras import layers
 
+# Structured logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
 # Env vars injected by Vertex
 PROJECT_ID = os.environ.get("GCP_PROJECT_ID")
-OUTPUT_DIR = os.environ.get("AIP_MODEL_DIR")  # REQUIRED by Vertex
+
+# Vertex provides AIP_MODEL_DIR; fallback allows local container runs
+OUTPUT_DIR = os.environ.get("AIP_MODEL_DIR", "/app/artifacts")
+
+# Safe directory creation before saving artifacts
+os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 
 def main():
@@ -44,7 +55,9 @@ def main():
     )
 
     # Save is expected by Vertex
-    model.save(os.path.join(OUTPUT_DIR, "model.keras"))
+    model_path = os.path.join(OUTPUT_DIR, "model.keras")
+    logger.info(f"Saving model to: {model_path}")
+    model.save(model_path)
 
 
 if __name__ == "__main__":
