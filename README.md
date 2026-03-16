@@ -1,6 +1,10 @@
 # End-to-End ML System Architecture
 
-This repository showcases a comprehensive machine learning workflow executed on Google Cloud using Vertex AI. The project aims to illustrate how a production-oriented machine learning system evolves from data exploration to feature management and model deployment. This architecture demonstrates the seamless integration of training pipelines, feature pipelines, and serving infrastructure within a modern machine learning platform.
+This repository showcases a comprehensive machine learning workflow executed on Google Cloud using Vertex AI. 
+
+The project aims to illustrate how a production-oriented machine learning system evolves from data exploration to feature management and model deployment. 
+
+This architecture demonstrates the seamless integration of containerized training pipelines, feature pipelines, and pipeline orchestration, along with model artifact versioning, serving infrastructure, and CI validation within a modern machine learning platform.
 
 The architecture reflects core machine learning engineering practices including:
 
