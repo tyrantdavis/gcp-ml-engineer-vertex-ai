@@ -47,6 +47,8 @@ checkpoints/
 *.h5
 *.onnx
 *.tflite
+artifacts/*
+!artifacts/model.keras
 
 # Logs & crashes
 *.log
