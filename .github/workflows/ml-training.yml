@@ -1,0 +1,27 @@
+name: ML Training Pipeline
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  train-model:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Docker
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build training container
+        run: docker build -t gcp-ml-engineer-vertex-ai-training -f training/Dockerfile .
+
+      - name: Run training container
+        run: |
+          docker run \
+          -v ${{ github.workspace }}/artifacts:/app/artifacts \
+          -v ${{ github.workspace }}/data:/app/data \
+          gcp-ml-engineer-vertex-ai-training
