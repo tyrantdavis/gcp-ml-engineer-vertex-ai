@@ -21,7 +21,7 @@ E --> F[Deployment Pipeline]
 F --> G[Serving Infrastructure]
 ```
 
-
+---
 # End-to-End ML Lifecycle
 
 Modern machine learning systems are typically organized around a lifecycle that transforms raw data into deployed models.

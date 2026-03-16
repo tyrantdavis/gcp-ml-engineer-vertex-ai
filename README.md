@@ -30,6 +30,7 @@ I --> F
 
 F --> J[Production Inference]
 ```
+---
 
 #### This architecture demonstrates how training pipelines, feature pipelines, and serving infrastructure interact within a modern ML platform.
 
@@ -44,7 +45,53 @@ The structure intentionally separates experimentation (notebooks) from reusable 
 
 ---
 
-## artifacts/
+## ML Platform Architecture
+This repository also demonstrates a simplified production-style ML platform including containerized training, artifact versioning, CI validation, and pipeline-based deployment orchestration.
+
+```mermaid
+flowchart LR
+
+A[Experiments<br>notebooks/] --> B[Training Container<br>training/]
+
+B --> C[Model Training<br>task.py]
+
+C --> D[Versioned Artifacts<br>artifacts/models]
+
+D --> E[Model Metadata<br>artifacts/metadata]
+
+E --> F[Deployment Pipeline<br>mlops/pipelines]
+
+F --> G[Serving Infrastructure]
+
+H[CI Pipeline<br>.github/workflows] --> B
+```
+
+
+### Key Features
+
+- ontainerized model training for reproducible environments
+
+- Pipeline orchestration for training and deployment workflows
+
+- Versioned model artifacts with metadata tracking
+
+- CI validation of the training environment
+
+- Multi-environment configuration (local / staging / prod)
+
+### Documentation
+
+Detailed architecture documentation:
+
+- docs/06-production-ml-system.md
+
+- docs/decisions.md
+
+---
+
+## Artifacts
+
+- artifacts/
 
 Stores generated outputs produced during model training and experimentation.
 
