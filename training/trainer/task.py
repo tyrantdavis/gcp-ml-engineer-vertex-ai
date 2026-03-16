@@ -1,6 +1,9 @@
 # Training entrypoint inside container
+import json
 import logging
 import os
+from datetime import datetime
+from pathlib import Path
 
 import numpy as np
 import tensorflow as tf
@@ -55,9 +58,27 @@ def main():
     )
 
     # Save is expected by Vertex
-    model_path = os.path.join(OUTPUT_DIR, "model.keras")
+    timestamp = datetime.utcnow().strftime("%Y%m%d_%H%M%S")
+
+    model_dir = Path(OUTPUT_DIR) / "models"
+    meta_dir = Path(OUTPUT_DIR) / "metadata"
+
+    model_dir.mkdir(parents=True, exist_ok=True)
+    meta_dir.mkdir(parents=True, exist_ok=True)
+
+    model_path = model_dir / f"model_{timestamp}.keras"
+    meta_path = meta_dir / f"model_{timestamp}.json"
+
     logger.info(f"Saving model to: {model_path}")
     model.save(model_path)
+
+    metadata = {
+        "model_path": str(model_path),
+        "training_time_utc": timestamp,
+    }
+
+    with open(meta_path, "w") as f:
+        json.dump(metadata, f, indent=2)
 
 
 if __name__ == "__main__":

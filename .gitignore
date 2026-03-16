@@ -38,15 +38,21 @@ env/
 .gcloud/
 .abstra/
 
+###########################
 # Vertex AI / ML artifacts
+##########################
+# ML artifacts
 models/
 model_artifacts/
 checkpoints/
+
 *.pkl
 *.joblib
 *.h5
 *.onnx
 *.tflite
+
+# Training outputs
 artifacts/*
 !artifacts/model.keras
 
