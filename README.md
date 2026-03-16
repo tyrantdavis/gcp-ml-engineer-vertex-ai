@@ -79,15 +79,41 @@ H[CI Pipeline<br>.github/workflows] --> B
 
 - Multi-environment configuration (local / staging / prod)
 
-### Documentation
+---
 
-Detailed architecture documentation:
+### Repository Map
+#### Why the Repository Map Matters
 
-- docs/06-production-ml-system.md
+Reviewers often ask themselves:
 
-- docs/decisions.md
+> "Where do I start?"
+
+**This section answers that instantly**:
+
+Quick navigation guide to the major components of the ML platform.
+
+- notebooks/        Experimentation and course notebooks
+- src/              Reusable ML modules (data prep, features, models)
+- training/         Containerized training environment
+- mlops/            Pipeline orchestration and automation
+- artifacts/        Versioned models and metadata registry
+- deployment/       Deployment configuration
+- docs/             Architecture and engineering decision documentation
+- .github/          CI workflow definitions
 
 ---
+
+### Documentation
+
+Detailed architecture and engineering documentation:
+
+docs/06-production-ml-system.md
+
+docs/decisions.md
+
+
+---
+
 
 ## Artifacts
 
